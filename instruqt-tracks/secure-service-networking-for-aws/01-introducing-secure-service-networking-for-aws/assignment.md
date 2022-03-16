@@ -1,6 +1,6 @@
 ---
 slug: introducing-secure-service-networking-for-aws
-id: pmdwnnimxkfb
+id: p5uztocx7wox
 type: challenge
 title: Introducing Secure Service Networking for AWS
 teaser: For many, Secure Service Networking is tricky on just one platform. Lets look

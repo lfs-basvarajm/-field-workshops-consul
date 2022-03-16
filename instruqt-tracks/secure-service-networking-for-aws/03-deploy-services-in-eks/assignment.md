@@ -1,6 +1,6 @@
 ---
 slug: deploy-services-in-eks
-id: 2ontib6im3go
+id: eynkymnlix7x
 type: challenge
 title: Deploy Services in EKS
 teaser: A short description of the challenge.

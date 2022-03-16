@@ -1,6 +1,6 @@
 ---
 slug: deploy-services-in-ecs
-id: belnxxzs06bn
+id: nisumwk0qfex
 type: challenge
 title: Deploy Services in ECS
 teaser: A short description of the challenge.

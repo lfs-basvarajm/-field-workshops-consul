@@ -1,6 +1,6 @@
 ---
 slug: validate-secure-service-networking-between-aws-platforms
-id: 1symsayklvv8
+id: sy2bg1i0x4or
 type: challenge
 title: Validate Secure Service Networking between AWS platforms
 teaser: A short description of the challenge.
