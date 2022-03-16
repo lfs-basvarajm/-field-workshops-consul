@@ -1,12 +1,3 @@
-output "aws_vpc_eks_id" {
-  value = "${module.vpc_services_eks.vpc_id}"
-}
-output "eks_private_subnets" {
-  value = "${module.vpc_services_eks.private_subnets}"
-}
-output "eks_public_subnets" {
-  value = "${module.vpc_services_eks.public_subnets}"
-}
 output "aws_vpc_ecs_id" {
   value = "${module.vpc_services_ecs.vpc_id}"
 }

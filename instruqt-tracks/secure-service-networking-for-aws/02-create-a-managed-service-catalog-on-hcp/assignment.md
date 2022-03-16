@@ -1,6 +1,6 @@
 ---
 slug: create-a-managed-service-catalog-on-hcp
-id: ltqucwm9rxxo
+id: gncrquhmblrk
 type: challenge
 title: Create a managed Service Catalog on HCP
 teaser: A short description of the challenge.
