@@ -8,6 +8,12 @@ notes:
 - type: text
   contents: Replace this text with your own text
 tabs:
+- title: Workshop Overview 1
+  type: website
+  url: https://htmlpreview.github.io/?https://raw.githubusercontent.com/hashicorp/field-workshops-consul/n8-ssn4aws-ecs-demo/instruqt-tracks/secure-service-networking-for-aws/assets/images/ssn4aws-overview1.html
+- title: Workshop Overview 2
+  type: website
+  url: https://htmlpreview.github.io/?https://raw.githubusercontent.com/hashicorp/field-workshops-consul/n8-ssn4aws-ecs-demo/instruqt-tracks/secure-service-networking-for-aws/assets/images/ssn4aws-overview2.html
 - title: code - ecs
   type: code
   hostname: shell

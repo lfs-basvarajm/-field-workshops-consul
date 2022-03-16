@@ -8,9 +8,9 @@ notes:
 - type: text
   contents: Replace this text with your own text
 tabs:
-- title: Workshop Overview
+- title: Workshop Overview 1
   type: website
-  url: https://htmlpreview.github.io/?https://raw.githubusercontent.com/hashicorp/field-workshops-consul/n8-ssn4aws/instruqt-tracks/secure-service-networking-for-aws/assets/images/ssn4aws-overview.html
+  url: https://htmlpreview.github.io/?https://raw.githubusercontent.com/hashicorp/field-workshops-consul/n8-ssn4aws-ecs-demo/instruqt-tracks/secure-service-networking-for-aws/assets/images/ssn4aws-overview1.html
 - title: HCP Consul
   type: website
   url: https://portal.cloud.hashicorp.com:443/sign-up
