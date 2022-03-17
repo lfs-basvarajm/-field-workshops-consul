@@ -23,7 +23,7 @@ tabs:
   type: terminal
   hostname: shell
 difficulty: basic
-timelimit: 600
+timelimit: 3600
 ---
 In this Instruqt challenge we are going to:
 

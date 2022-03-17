@@ -14,6 +14,10 @@ tabs:
 - title: Workshop Overview 2
   type: website
   url: https://htmlpreview.github.io/?https://raw.githubusercontent.com/hashicorp/field-workshops-consul/n8-ssn4aws-ecs-demo/instruqt-tracks/secure-service-networking-for-aws/assets/images/ssn4aws-overview2.html
+- title: HCP Consul
+  type: website
+  url: https://portal.cloud.hashicorp.com:443/sign-up
+  new_window: true
 - title: code - ecs
   type: code
   hostname: shell
@@ -31,11 +35,16 @@ tabs:
   type: terminal
   hostname: shell
 difficulty: basic
-timelimit: 6000
+timelimit: 3600
 ---
-The assignment the participant needs to complete in order to proceed.
 
-You can use any GitHub flavoured markdown.
+In this challenge we are going to:
+
+1) Create an ECS Cluster, and deploy services
+2) Increment the instance count
+
+1) Create an ECS Cluster, and deploy services
+===
 
 We're going to use the `terraform.tfvars` generated earlier. You can review the `terraform.tfvars` file in the `conde - HCP Config` tab.
 
@@ -53,4 +62,13 @@ terraform plan
 Deploy with:
 ```sh
 terraform apply -auto-approve
+```
+
+
+2) Increment the instance count
+===
+
+Lets increment the instaces:
+```sh
+terraform apply -var client_count=3 -var server_count=3
 ```

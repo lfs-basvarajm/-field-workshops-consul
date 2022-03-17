@@ -32,7 +32,7 @@ tabs:
   type: terminal
   hostname: shell
 difficulty: basic
-timelimit: 600
+timelimit: 3600
 ---
 We're going to use terraform to deploy both HCP Consul and HCP Vault. To do this, first we need to create an HCP account from which we can provision services.
 

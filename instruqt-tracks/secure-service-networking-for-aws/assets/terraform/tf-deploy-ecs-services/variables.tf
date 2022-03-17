@@ -9,16 +9,23 @@ variable "vpc_region" {
   type        = string
   default     = "us-west-2"
 }
+
 variable "consul_cluster_addr" {
   type        = string
   description = "The network address of your Consul cluster. "
 }
 
-#variable "consul_datacenter" {
-#  type        = string
-#  description = "The name of your Consul datacenter."
-#  default     = "dc1"
-#}
+variable "client_count" {
+  type        = number
+  description = "The number of front-end services."
+  default     = 1
+}
+
+variable "server_count" {
+  type        = number
+  description = "The number of upstream services."
+  default     = 1
+}
 
 variable "consul_acl_token" {
   type        = string
