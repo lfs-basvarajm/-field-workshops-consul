@@ -3,7 +3,7 @@ locals {
     logDriver = "awslogs"
     options = {
       awslogs-group         = aws_cloudwatch_log_group.log_group.name
-      awslogs-region        = var.region
+      awslogs-region        = var.vpc_region
       awslogs-stream-prefix = "app"
     }
   }
@@ -17,7 +17,7 @@ resource "aws_ecs_service" "example_server_app" {
   task_definition = module.example_server_app.task_definition_arn
   desired_count   = 1
   network_configuration {
-    subnets = module.vpc.private_subnets
+    subnets = var.private_subnets_ids
   }
   launch_type            = "FARGATE"
   propagate_tags         = "TASK_DEFINITION"
@@ -26,7 +26,8 @@ resource "aws_ecs_service" "example_server_app" {
 
 module "example_server_app" {
   source  = "hashicorp/consul-ecs/aws//modules/mesh-task"
-  version = "0.2.0"
+  version = "0.3.0"
+  consul_image      = "hashicorp/consul-enterprise:1.11.4-ent"
 
   family            = "${var.name}-example-server-app"
   port              = "9090"
@@ -43,14 +44,14 @@ module "example_server_app" {
       }
     ]
   }]
-  retry_join                     = jsondecode(base64decode(hcp_consul_cluster.example.consul_config_file))["retry_join"]
+  retry_join                     = [substr(data.terraform_remote_state.hcp.outputs.hcp_consul_private_endpoint_url, 8, -1)]
   tls                            = true
   consul_server_ca_cert_arn      = aws_secretsmanager_secret.consul_ca_cert.arn
   gossip_key_secret_arn          = aws_secretsmanager_secret.gossip_key.arn
   acls                           = true
   consul_client_token_secret_arn = module.acl_controller.client_token_secret_arn
   acl_secret_name_prefix         = var.name
-  consul_datacenter              = var.hcp_datacenter_name
+  consul_datacenter              = data.terraform_remote_state.hcp.outputs.consul_datacenter
 
   depends_on = [module.acl_controller]
 }
