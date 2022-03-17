@@ -67,7 +67,6 @@ module "example_client_app" {
       localBindPort  = 1234
     }
   ]
-#  retry_join                     = jsondecode(base64decode(hcp_consul_cluster.example.consul_config_file))["retry_join"]
   retry_join                     = [substr(data.terraform_remote_state.hcp.outputs.hcp_consul_private_endpoint_url, 8, -1)]
   tls                            = true
   consul_server_ca_cert_arn      = aws_secretsmanager_secret.consul_ca_cert.arn
@@ -75,7 +74,6 @@ module "example_client_app" {
   acls                           = true
   consul_client_token_secret_arn = module.acl_controller.client_token_secret_arn
   acl_secret_name_prefix         = var.name
-#  consul_datacenter              = var.hcp_datacenter_name
   consul_datacenter              = data.terraform_remote_state.hcp.outputs.consul_datacenter
 
   depends_on = [module.acl_controller, module.example_server_app]
